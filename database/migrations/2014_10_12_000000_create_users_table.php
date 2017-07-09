@@ -13,14 +13,24 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+
+        /*
+         * Users created via OAuth will have a provider and provider_id[unique]
+         * These users will also not have a password, so the password should be nullable
+         * These users might / might not have an email associated with their social accounts so the email should also be nullable.
+         */
+
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('email')->nullable()->unique();
+            $table->string('password')->nullable();
+            $table->string('provider')->default('quick-fruits');
+            $table->string('provider_id')->unique()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
+
     }
 
     /**
