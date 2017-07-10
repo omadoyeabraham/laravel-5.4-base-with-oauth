@@ -8,7 +8,7 @@ Google and Facebook**
 
  - [ ] Clone the repository
  - [ ] Rename the .env.example to .env
- - [ ] Run npm install (installs the laravel socialite package alongside other npm packages that are shipped with Laravel)
+ - [ ]  Run npm install & composer install (installs the laravel socialite package alongside other npm/composer packages that are shipped with Laravel)
  - [ ] In your .env file, create the environment variables needed by the OAuth provider you wish to use.
  - [ ] Ensure that your DB connection is properly setup
  - [ ] Run your migrations using **php artisan migrate**
